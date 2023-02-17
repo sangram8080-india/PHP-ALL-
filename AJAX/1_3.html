@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="div1">
+        <h1>XMLHttpRequest using javascript</h1>
+    </div>
+    <button type="button" id="btn" onclick="myFunction()">click</button>
+
+    <script>
+        function myFunction() {
+            var req = new XMLHttpRequest();
+            req.open('GET', 'Welcome.html', true)
+            req.send();
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4 && req.status == 200) {
+                    document.getElementById("div1").innerHTML = req.responseText;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

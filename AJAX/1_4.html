@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $.post("post.php",{
+      name:"SANGRAM",
+      subject:"Data Structure"
+    } ,function(data, status){
+      
+         $('#data').html(data);
+         alert("My Name is "+status)
+         
+    });
+  });
+});
+</script>
+</head>
+<body>
+ 
+     <div id="data">
+     <h1>Change Page..... Cliked here</h1>
+<button id="btn">Cahnge</button>
+</div>
+
+</body>
+</html>
